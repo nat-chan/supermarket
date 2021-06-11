@@ -3,7 +3,7 @@ from typing import *
 from data import product_list
 
 def solve1(
-        intput_List: List[Tuple[int, int]]
+        intput_List: List[Tuple[int, int]] # (商品番号, 個数)のリスト
     ) -> int:
     """
     お題1 合計金額
