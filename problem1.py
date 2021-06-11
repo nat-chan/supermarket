@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from typing import *
 from data import product_list
 from math import ceil, floor
+
 """
 ## お題4 割引
 リンゴは1個100円だが、3つ買うと280円になる。
@@ -100,6 +103,25 @@ def solve5(
     11個で10個ぶんの金額（12個で11個分、20個で19個分、22個で20個ぶん、...)
     という形で実現しよう。
     """
+    ans = 0
+    for id, quantity in input_list:
+            """
+            q: Quotient 商
+            r: remainder 余
+            n == p * q + r
+            """
+            q = quantity//11
+            r = quantity%11
+            assert quantity == 11*q + r
+            assert r in range(11)
+            """
+            num:〇個数分の価格
+            """
+            num = 0
+            num += q * 10
+            num += r
+            ans += product_list[id].price* num * 1.08
+    ans = floor(ans)
     pass
 
 
