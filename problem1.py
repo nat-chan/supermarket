@@ -3,7 +3,7 @@ from typing import *
 from data import product_list
 
 def solve1(
-        intput_List: List[Tuple[int, int]] # (商品番号, 個数)のリスト
+        input_list: List[Tuple[int, int]] # (商品番号, 個数)のリスト
     ) -> int:
     """
     お題1 合計金額
@@ -14,7 +14,10 @@ def solve1(
     両方のアプローチをTDDで実装し見比べて、どちらが良いか判断してみよう。
     いきなり書くのが難しかったら、以下の補題をやってみるとよい。
     """
-    pass
+    ans = 0
+    for id, quantity in input_list:
+        ans += product_list[id].price*quantity
+    return ans
 
 def solve2() -> int:
     """
