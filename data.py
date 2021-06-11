@@ -20,6 +20,9 @@ product_list = {
 }
 
 def product_list():
+    """
+    名前付きタプルのデータ構造の使い方のテスト
+    """
     ringo = product_list[1]
     print(ringo.id)    # 1
     print(ringo.name)  # りんご
