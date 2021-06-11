@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 from typing import *
 from data import product_list
+from math import ceil, floor
 
 def solve1(
         input_list: List[Tuple[int, int]] # (商品番号, 個数)のリスト
-    ) -> int:
+    ) -> int: # 合計金額
     """
     お題1 合計金額
     商品番号と個数を複数組、引数として受け取り、合計金額を計算する関数を書いてみよう。
@@ -19,12 +20,16 @@ def solve1(
         ans += product_list[id].price*quantity
     return ans
 
-def solve2() -> int:
+def solve2(
+        input_list: List[Tuple[int, int]] # (商品番号, 個数)のリスト
+    ) -> int: # 合計金額
     """
     ## お題2 消費税
     商品リストの金額は外税なので、合計金額に消費税8％を足して、支払金額を返すようにしよう。
     """
-    pass
+    # 小数点以下は切り下げ
+    ans = floor(solve1(input_list)*1.08)
+    return ans
 
 def solve3() -> int:
     """
