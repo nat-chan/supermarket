@@ -53,6 +53,8 @@ def solve5() -> int:
 def test_solve1() -> bool:
     pass
 
+def main():
+    pass
 
 if __name__ == '__main__':
     main()
