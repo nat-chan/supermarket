@@ -2,28 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from typing import *
-# from data test_product_list
-from data import product_list
 import problem1
-from random import randint
-
-ID_MAX = 9
-QUANTITY_MAX = 100
-
-
-def generate_testdata() -> List[Tuple[int, int]]:
-    testdata = list()
-    for id in range(1, ID_MAX):
-        quantity = randint(1, QUANTITY_MAX)
-        testdata.append( (id, quantity) )
-    return testdata
-
-def random_test():
-    from problem1 import *
-    for i in range(1, 5+1):
-        print(
-        locals()[f"solve{i}"]
-        )
 
 
 # print(ringo.id)    # 1
@@ -38,4 +17,17 @@ def test_2():
     assert problem1.solve2(testArr) == 1080
 def test_3():
     testArr = [(6,2), (1,8)]
-    assert == 1704
+    assert problem1.solve3(testArr) == 1704
+def test_4():
+    testArr = [(1,3), (1,8)]
+    return problem1.solve4(testArr) == 302
+def test_5():
+    testArr = [(1,11)]
+    return problem1.solve5(testArr) == 1080
+
+if __name__ == '__main__':
+    test_1()
+    test_2()
+    test_3()
+    test_4()
+    test_5()

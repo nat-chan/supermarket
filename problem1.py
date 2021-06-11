@@ -6,10 +6,7 @@ from data import product_list
 from math import ceil, floor
 
 """
-## お題4 割引
-リンゴは1個100円だが、3つ買うと280円になる。
-## お題5 おまけ
-なんでも、同じものを10個買うと、1個おまけでもらえる。11個で10個ぶんの金額（12個で11個分、20個で19個分、22個で20個ぶん、...)という形で実現しよう。
+残りのお題...
 ## お題6 おまけのライター
 タバコを1カートン(10個)買うと、ライターがおまけでもらえる。引数にライターがあったら無料になるというふうに実現しよう。
 ## お題7 お弁当
@@ -93,6 +90,7 @@ def solve4(
         else:
             ans += product_list[id].price*quantity * 1.08
     ans = floor(ans)
+    return ans
 
 def solve5(
         input_list: List[Tuple[int, int]] # (商品番号, 個数)のリスト
@@ -122,11 +120,7 @@ def solve5(
             num += r
             ans += product_list[id].price* num * 1.08
     ans = floor(ans)
-    pass
-
-
-def test_solve1() -> bool:
-    pass
+    return ans
 
 def main():
     pass
